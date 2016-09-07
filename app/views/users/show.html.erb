@@ -1,0 +1,27 @@
+<h1>User Profile</h1>
+<%= form_for(task) do |f| %>
+	<% if task.errors.any? %>
+		<div id="error_explaination">
+			<h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+			<ul>
+				<% task.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="field">
+			<%= f.label :task1 %>
+			<%= f.text_field :task1 %>
+		</div>
+
+		<div class="field">
+		    <%= f.label :task2 %>
+		    <%= f.text_field :task2 %>
+	  </div>
+	  
+		<div class="actions">
+		    <%= f.submit %>
+	  </div>
+	<% end %>
